@@ -9,6 +9,10 @@ public class DoublyLinkedListNode<T> extends LinkedListNode<T> {
         this.prevNode = null;
     }
 
+    public boolean hasPrevNode() {
+        return this.prevNode != null;
+    }
+
     public boolean hasNextNode() {
         return this.nextNode != null;
     }
