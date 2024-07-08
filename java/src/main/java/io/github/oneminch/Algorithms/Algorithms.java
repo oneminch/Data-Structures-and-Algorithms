@@ -19,4 +19,26 @@ public class Algorithms {
             return recursiveBinarySearch(list.subList(0, midpoint), target);
 
     }
+
+    public static <T extends Comparable<? super T>> boolean iterativeBinarySearch(List<T> list, T target) {
+        int low = 0;
+        int high = list.size() - 1;
+        int midpoint = 0;
+
+        if (list.size() == 1)
+            return target.equals(list.get(0));
+
+        do {
+            midpoint = (high + low) / 2;
+            
+            if (target.compareTo(list.get(midpoint)) == 0)
+                return true;
+            else if (target.compareTo(list.get(midpoint)) > 0)
+                low = midpoint + 1;
+            else
+                high = midpoint - 1;
+        } while (low <= high);
+
+        return false;
+    }
 }
