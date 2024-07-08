@@ -50,8 +50,6 @@ public class QueueTest {
 
     @Test
     public void testIsEmpty() {
-        boolean expected = true;
-        boolean actual = q.isEmpty();
         assertTrue(q.isEmpty());
 
         q.enqueue(5);
