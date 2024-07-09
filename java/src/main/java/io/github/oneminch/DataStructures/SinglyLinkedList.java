@@ -1,32 +1,32 @@
 package io.github.oneminch.DataStructures;
 
-import io.github.oneminch.DataStructures.Nodes.LinkedListNode;
+import io.github.oneminch.DataStructures.Nodes.SinglyLinkedNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SinglyLinkedList<T> {
-    private LinkedListNode<T> head;
-    private LinkedListNode<T> tail;
+    private SinglyLinkedNode<T> head;
+    private SinglyLinkedNode<T> tail;
     private List<T> list;
     private int length;
 
     public SinglyLinkedList(T value) {
-        this.head = new LinkedListNode<>(value);
+        this.head = new SinglyLinkedNode<>(value);
         this.tail = this.head;
         this.list = new ArrayList<>();
         this.length += 1;
     }
 
     public void appendNode(T item) {
-        LinkedListNode<T> newNode = new LinkedListNode<>(item);
+        SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(item);
         this.tail.setNextNode(newNode);
         this.tail = newNode;
         this.length += 1;
     }
 
     public void prependNode(T item) {
-        LinkedListNode<T> newNode = new LinkedListNode<>(item);
+        SinglyLinkedNode<T> newNode = new SinglyLinkedNode<>(item);
         newNode.setNextNode(this.head);
         this.head = newNode;
         this.length += 1;
@@ -37,8 +37,8 @@ public class SinglyLinkedList<T> {
             return;
         }
 
-        LinkedListNode<T> currentNode = this.head;
-        LinkedListNode<T> previousNode = null;
+        SinglyLinkedNode<T> currentNode = this.head;
+        SinglyLinkedNode<T> previousNode = null;
         T currentValue;
 
         do {
@@ -60,7 +60,7 @@ public class SinglyLinkedList<T> {
     }
 
     public boolean searchNode(T item) {
-        LinkedListNode<T> currentNode = this.head;
+        SinglyLinkedNode<T> currentNode = this.head;
         T currentValue;
 
         while (currentNode != null) {
@@ -77,7 +77,7 @@ public class SinglyLinkedList<T> {
     }
 
     public void print() {
-        LinkedListNode<T> currentNode = this.head;
+        SinglyLinkedNode<T> currentNode = this.head;
 
         while (currentNode != null) {
             System.out.print(currentNode.getValue() + " -> ");
@@ -87,7 +87,7 @@ public class SinglyLinkedList<T> {
     }
 
     public List<T> listify() {
-        LinkedListNode<T> currentNode = this.head;
+        SinglyLinkedNode<T> currentNode = this.head;
 
         this.list.clear();
         while (currentNode != null) {

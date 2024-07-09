@@ -1,25 +1,25 @@
 package io.github.oneminch.DataStructures;
 
-import io.github.oneminch.DataStructures.Nodes.DoublyLinkedListNode;
+import io.github.oneminch.DataStructures.Nodes.DoublyLinkedNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class DoublyLinkedList<T> {
-    private DoublyLinkedListNode<T> head;
-    private DoublyLinkedListNode<T> tail;
+    private DoublyLinkedNode<T> head;
+    private DoublyLinkedNode<T> tail;
     private List<T> list;
     private int length;
 
     public DoublyLinkedList(T value) {
-        this.head = new DoublyLinkedListNode<>(value);
+        this.head = new DoublyLinkedNode<>(value);
         this.tail = this.head;
         this.list = new ArrayList<>();
         this.length += 1;
     }
 
     public void appendNode(T item) {
-        DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<>(item);
+        DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(item);
         newNode.setPrevNode(this.tail);
         this.tail.setNextNode(newNode);
         this.tail = newNode;
@@ -27,7 +27,7 @@ public class DoublyLinkedList<T> {
     }
 
     public void prependNode(T item) {
-        DoublyLinkedListNode<T> newNode = new DoublyLinkedListNode<>(item);
+        DoublyLinkedNode<T> newNode = new DoublyLinkedNode<>(item);
         newNode.setNextNode(this.head);
         this.head = newNode;
         this.length += 1;
@@ -38,9 +38,9 @@ public class DoublyLinkedList<T> {
             return;
         }
 
-        DoublyLinkedListNode<T> currentNode = this.head;
-        DoublyLinkedListNode<T> previousNode = null;
-        DoublyLinkedListNode<T> nextNode = null;
+        DoublyLinkedNode<T> currentNode = this.head;
+        DoublyLinkedNode<T> previousNode = null;
+        DoublyLinkedNode<T> nextNode = null;
         T currentValue;
 
         do {
@@ -74,7 +74,7 @@ public class DoublyLinkedList<T> {
     }
 
     public boolean searchNode(T item) {
-        DoublyLinkedListNode<T> currentNode = this.head;
+        DoublyLinkedNode<T> currentNode = this.head;
         T currentValue;
 
         while (currentNode != null) {
@@ -91,7 +91,7 @@ public class DoublyLinkedList<T> {
     }
 
     public void print() {
-        DoublyLinkedListNode<T> currentNode = this.head;
+        DoublyLinkedNode<T> currentNode = this.head;
 
         while (currentNode != null) {
             System.out.print(currentNode.getValue() + " <-> ");
@@ -101,7 +101,7 @@ public class DoublyLinkedList<T> {
     }
 
     public List<T> listify() {
-        DoublyLinkedListNode<T> currentNode = this.head;
+        DoublyLinkedNode<T> currentNode = this.head;
 
         this.list.clear();
         while (currentNode != null) {
