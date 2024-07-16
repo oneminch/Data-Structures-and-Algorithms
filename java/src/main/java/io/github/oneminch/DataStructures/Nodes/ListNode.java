@@ -1,19 +1,19 @@
 package io.github.oneminch.DataStructures.Nodes;
 
-public abstract class Node<T> {
+public abstract class ListNode<T> {
     protected final T value;
 
-    public Node(T value) {
+    public ListNode(T value) {
         this.value = value;
     }
-    
+
     public T getValue() {
         return this.value;
     }
-    
+
     public abstract boolean hasNextNode();
-    
-    public abstract void setNextNode(Node<T> node);
-    
-    public abstract Node<T> getNextNode();
+
+    public abstract void setNextNode(ListNode<T> node);
+
+    public abstract ListNode<T> getNextNode();
 }

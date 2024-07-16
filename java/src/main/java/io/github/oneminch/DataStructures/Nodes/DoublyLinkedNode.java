@@ -1,9 +1,9 @@
 package io.github.oneminch.DataStructures.Nodes;
 
-public class DoublyLinkedNode<T> extends Node<T> {
+public class DoublyLinkedNode<T> extends ListNode<T> {
     protected DoublyLinkedNode<T> nextNode;
     protected DoublyLinkedNode<T> prevNode;
-    
+
     public DoublyLinkedNode(T value) {
         super(value);
     }
@@ -14,9 +14,9 @@ public class DoublyLinkedNode<T> extends Node<T> {
     }
 
     @Override
-    public void setNextNode(Node<T> node) {
+    public void setNextNode(ListNode<T> node) {
         if (node instanceof DoublyLinkedNode || node == null) {
-            this.nextNode = (DoublyLinkedNode<T>)node;
+            this.nextNode = (DoublyLinkedNode<T>) node;
         } else {
             throw new IllegalArgumentException("Invalid Argument");
         }
