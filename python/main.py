@@ -47,7 +47,7 @@ if __name__ == "__main__":
             continue
 
         if choice == "q":
-            print(f"\n{'-'*50}")
+            print(f"\n{'-'*25} Goodbye {'-'*25}")
             break
         else:
             fn_mappings[choice]()

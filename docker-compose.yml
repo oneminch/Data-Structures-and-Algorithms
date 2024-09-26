@@ -1,0 +1,9 @@
+services:
+  java:
+    build: ./java
+
+  javascript:
+    build: ./javascript
+
+  python:
+    build: ./python
